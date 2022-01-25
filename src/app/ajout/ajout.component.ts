@@ -19,8 +19,7 @@ export class AjoutComponent implements OnInit {
   }
 
   addStat(form: NgForm) {
-    console.log("yes");
-    this.statServ.stats.push(new Statistique("kgd", this.title, this.value));
+    this.statServ.stats.push(new Statistique(this.id, this.title, this.value));
     form.reset();
   }
 
