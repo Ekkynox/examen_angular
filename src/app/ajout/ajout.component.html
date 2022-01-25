@@ -1,1 +1,11 @@
-<p>ajout works!</p>
+<h1>Ajouter une statistique</h1>
+
+<form (ngSubmit)=addStat(form) #form="ngForm">
+    <label>Id de la stat : </label>
+    <input type="text" required placeholder="Id de la stat" [(ngModel)]="id" name="id">
+    <label>Titre de la stat : </label>
+    <input type="text" required placeholder="Titre de la stat" [(ngModel)]="title" name="title">
+    <label>Valeur de la stat : </label>
+    <input type="number" required placeholder="Valeur de la stat" [(ngModel)]="value" name="value">
+    <input type="submit" value="Ajouter" [disabled]="!form.valid">
+</form>

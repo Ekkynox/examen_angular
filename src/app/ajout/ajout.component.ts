@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Statistique } from '../models/statistique';
+import { StatistiqueService } from '../service/statistique.service';
 
 @Component({
   selector: 'app-ajout',
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout.component.css']
 })
 export class AjoutComponent implements OnInit {
+  id!: string;
+  title!: string;
+  value!: number;
 
-  constructor() { }
+  constructor(private statServ: StatistiqueService) { }
 
   ngOnInit(): void {
+  }
+
+  addStat(form: NgForm) {
+    console.log("yes");
+    this.statServ.stats.push(new Statistique("kgd", this.title, this.value));
+    form.reset();
   }
 
 }
