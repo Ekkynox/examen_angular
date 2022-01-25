@@ -15,9 +15,9 @@ export class StatistiqueComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  deleteStat(delStatId: string) {
+  deleteStat(delStatTitle: string) {
     for (let i = 0; i < this.statServ.stats.length; i++) {
-      if (this.statServ.stats[i].id = delStatId) {
+      if (this.statServ.stats[i].title == delStatTitle) {
         this.statServ.stats.splice(i, 1);
       }
     }

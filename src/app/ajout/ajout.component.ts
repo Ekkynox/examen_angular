@@ -21,8 +21,8 @@ export class AjoutComponent implements OnInit {
   }
 
   addStat(form: NgForm) {
-    let stat = new Statistique(this.id, this.title, this.value);
-    this.statServ.stats.push(stat);
+    let stat = new Statistique(this.title, this.value);
+    // this.statServ.stats.push(stat); 
     form.reset();
 
     lastValueFrom(this.http.post<Statistique>("https://stats.naminilamy.fr/", JSON.stringify(stat)))
