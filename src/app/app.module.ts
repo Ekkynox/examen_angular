@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { StatistiqueComponent } from './statistique/statistique.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ListeComponent } from './liste/liste.component';
+import { AjoutComponent } from './ajout/ajout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatistiqueComponent
+    StatistiqueComponent,
+    ListeComponent,
+    AjoutComponent
   ],
   imports: [
     BrowserModule,
